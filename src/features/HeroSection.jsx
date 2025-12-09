@@ -33,7 +33,7 @@ const HeroSection = () => {
     }
 
     return (
-        <div className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center px-6 transition-colors duration-300 ${
+        <div className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden text-center px-6 transition-colors duration-300 ${
             darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
         }`}>
 
@@ -83,7 +83,7 @@ const HeroSection = () => {
 
             {/* Orb is always visible */}
             <div
-                className='sm:scale-110 md:scale-120 lg:scale-125 xl:scale-130'
+                className='sm:scale-110 md:scale-120 lg:scale-125 xl:scale-130 overflow-hidden'
                 style={{ width: '100%', height: '600px', position: 'absolute', zIndex: 20 }}>
                 <Orb
                     hoverIntensity={.7}

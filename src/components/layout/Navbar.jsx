@@ -13,10 +13,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed w-full top-0 z-20 backdrop-blur transition-colors duration-300 bg-white/80 dark:bg-slate-950/80 border border-gray-200 dark:border-gray-800 shadow-sm z-100 
+      className="fixed top-0 w-full backdrop-blur transition-colors duration-300 bg-white/80 dark:bg-slate-950/80 border border-gray-200 dark:border-gray-800 shadow-sm z-100  
       
       ">
-
 
       <div className="mx-auto flex items-center justify-between px-6 py-4">
         <div className="text-xl font-bold tracking-tight bg-linear-to-r from-blue-600 to-violet-600 dark:from-violet-400 dark:to-blue-400 bg-clip-text text-transparent">

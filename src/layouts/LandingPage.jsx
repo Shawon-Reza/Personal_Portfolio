@@ -19,7 +19,7 @@ const LandingPage = () => {
                 <section>
                     <Navbar />
                 </section>
-                <section>
+                <section className='mt-18'>
                     <HeroSection />
                 </section>
                 <section>
