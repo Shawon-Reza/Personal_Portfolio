@@ -1,12 +1,6 @@
-/**
- * Utility function to merge classnames conditionally
- * @param {...any} inputs - Class names to merge
- * @returns {string} Merged class names
- */
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 export function cn(...inputs) {
-  return inputs
-    .flat()
-    .filter((x) => typeof x === "string")
-    .join(" ")
-    .trim()
+  return twMerge(clsx(inputs));
 }

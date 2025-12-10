@@ -6,13 +6,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-"postinstall": "node -e \"try{ require('fs').chmodSync('./node_modules/.bin/vite', 0o755);}catch(e){}\""
+    "postinstall": "node -e \"try{ require('fs').chmodSync('./node_modules/.bin/vite', 0o755);}catch(e){}\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/react-query": "^5.90.8",
     "axios": "^1.13.2",
-    "motion": "^12.23.24",
+    "clsx": "^2.1.1",
+    "motion": "^12.23.25",
     "ogl": "^1.0.11",
     "postprocessing": "^6.38.0",
     "react": "^19.2.0",
@@ -21,6 +22,7 @@
     "react-router-dom": "^7.9.5",
     "react-toastify": "^11.0.5",
     "sweetalert2": "^11.26.3",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
     "three": "^0.181.2"
   },

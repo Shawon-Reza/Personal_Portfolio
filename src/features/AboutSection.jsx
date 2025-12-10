@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDarkMode } from '../Contexts/ThemeContext'
 import { ShineBorder } from '../components/ui/ShineBorder'
+import { PinContainer } from '../components/ui/PinContainer'
 
 
 // Data-driven hero section; pass a custom `content` prop to override defaults.
@@ -126,8 +127,8 @@ const AboutSection = ({ content = defaultContent }) => {
                 {/* Right side Content */}
 
                 <div className="flex-1 relative">
-                        
-                   
+
+
                     <div className={`relative mx-auto max-w-md rounded-3xl p-6 shadow-xl backdrop-blur transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-gray-900/70' : 'border-gray-200 bg-white/80'
                         }`}>
                         <ShineBorder
@@ -135,27 +136,32 @@ const AboutSection = ({ content = defaultContent }) => {
                             duration={10}
                             className="absolute inset-0"
                         />
-                        <div className={`relative overflow-hidden rounded-2xl p-[3px] `}>
-                            <ShineBorder
-                                borderWidth={2}
-                                duration={10}
-                                className="absolute inset-0"
-                            />
-                            <div className={`rounded-[14px] px-8 py-10 text-center shadow-lg transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'
-                                }`}>
-                                <div className={`mx-auto mb-6 h-24 w-24 rounded-full shadow-lg ${darkMode ? 'bg-linear-to-br from-violet-500 to-fuchsia-400' : 'bg-linear-to-br from-blue-500 to-emerald-400'
-                                    }`} />
-                                <h2 className={`text-xl font-semibold transition-colors duration-300 ${darkMode ? 'text-gray-100' : 'text-gray-900'
-                                    }`}>{name}</h2>
-                                <p className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'
-                                    }`}>{role}</p>
-                                <p className={`mt-3 text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'
-                                    }`}>{subheadline}</p>
-                            </div>
-                        </div>
 
-                        <div className={`mt-6 grid grid-cols-1 gap-3 rounded-2xl p-4 sm:grid-cols-3 transition-colors duration-300 ${darkMode ? 'bg-gray-800/60' : 'bg-gray-50'
+                        {/* Middle Contents */}
+                        <PinContainer>
+                            <div className={`relative overflow-hidden rounded-2xl p-[3px] min-w-[350px] `}>
+                                <ShineBorder
+                                    borderWidth={2}
+                                    duration={10}
+                                    className="absolute inset-0"
+                                />
+                                <div className={`rounded-[14px] px-8 py-10 text-center  transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'
+                                    }`}>
+                                    <div className={`mx-auto mb-6 h-24 w-24 rounded-full shadow-lg ${darkMode ? 'bg-linear-to-br from-violet-500 to-fuchsia-400' : 'bg-linear-to-br from-blue-500 to-emerald-400'
+                                        }`} />
+                                    <h2 className={`text-xl font-semibold transition-colors duration-300 ${darkMode ? 'text-gray-100' : 'text-gray-900'
+                                        }`}>{name}</h2>
+                                    <p className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'
+                                        }`}>{role}</p>
+                                    <p className={`mt-3 text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'
+                                        }`}>{subheadline}</p>
+                                </div>
+                            </div>
+                        </PinContainer>
+
+                        <div className={`mt-10 grid grid-cols-1 gap-3 rounded-2xl p-4 sm:grid-cols-3 transition-colors duration-300 ${darkMode ? 'bg-gray-800/60' : 'bg-gray-50'
                             }`}>
+
 
                             {stats?.map((stat) => (
                                 <div key={stat.label} className={`rounded-3xl p-3 relative text-center shadow-sm transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-white'
