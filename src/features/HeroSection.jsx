@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useDarkMode } from '../Contexts/ThemeContext'
 import PixelBlast from '../components/ui/PixelBlast'
 import FloatingLines from '../components/ui/FloatingLines'
+import { Highlighter } from '../components/ui/Highlighter'
 
 const HeroSection = () => {
     const { darkMode } = useDarkMode()
@@ -33,9 +34,8 @@ const HeroSection = () => {
     }
 
     return (
-        <div className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden text-center px-6 transition-colors duration-300 ${
-            darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
-        }`}>
+        <div className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden text-center px-6 transition-colors duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
+            }`}>
 
             {/* Random background: only one will be displayed */}
             {bgVariant === 'pixel' && (
@@ -96,36 +96,48 @@ const HeroSection = () => {
 
             <div className="relative z-30 max-w-4xl mx-auto space-y-2">
                 <div className="space-y-1">
-                    <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
-                        darkMode ? 'text-gray-100' : 'text-gray-900'
-                    }`}>
+
+
+                    <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${darkMode ? 'text-gray-100' : 'text-gray-900'
+                        }`}>
                         HI, I'M
-                        <span className={`block mt-2 text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 ${
-                            darkMode ? 'text-violet-400' : 'text-blue-600'
-                        }`}>Shawon Reza</span>
+                        <span className={`block mt-2 text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 ${darkMode ? 'text-violet-400' : 'text-blue-600'
+                            }`}>Shawon Reza</span>
                     </h1>
 
-                    <h2 className={`md:my-6 text-sm md:text-base lg:text-lg font-medium max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${
-                        darkMode ? 'text-gray-400' : 'text-gray-700'
-                    }`}>
-                        FRONTEND DEVELOPER <br /> FOCUSED ON SCALABLE ARCHITECTURE,<br /> CLEAN STRUCTURE,<br /> CLEAR UX AND PERFORMANCE.
+                    <h2 className={`md:my-6 text-sm md:text-base lg:text-lg font-medium max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-700'
+                        }`}>
+
+                        {/* action	"highlight" | "circle" | "box" | "bracket" | "crossed-off" | "strike-through" | "underline" */}
+
+                        <Highlighter action="highlight" color="#FF9800">
+                            FRONTEND DEVELOPER
+                        </Highlighter>
+
+                        <br /> BUILDING COMPLETE WEB APPLICATIONS <br />FROM 
+                        <Highlighter action="underline" color="#FF9800">
+                            FRONTEND
+                        </Highlighter> TO
+                        
+                         <Highlighter action="underline" color="#FF9800">
+                            BACKEND
+                        </Highlighter> <br />
+                        MADE TO BE FAST, CLEAN, AND USER-FRIENDLY
                     </h2>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-1 md:gap-4 md:pt-2">
                     <a
                         href="mailto:shawon.reza.dev@gmail.com"
-                        className={`px-6 py-3 rounded-full text-sm font-semibold shadow-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                            darkMode ? 'bg-violet-600 text-white hover:bg-violet-700 focus-visible:outline-violet-500' : 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-500'
-                        }`}
+                        className={`px-6 py-3 rounded-full text-sm font-semibold shadow-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${darkMode ? 'bg-violet-600 text-white hover:bg-violet-700 focus-visible:outline-violet-500' : 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-500'
+                            }`}
                     >
                         LET'S CONNECT
                     </a>
                     <a
                         href="#"
-                        className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                            darkMode ? 'bg-gray-800 text-gray-100 hover:bg-gray-700 focus-visible:outline-violet-500' : 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus-visible:outline-blue-500'
-                        }`}
+                        className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${darkMode ? 'bg-gray-800 text-gray-100 hover:bg-gray-700 focus-visible:outline-violet-500' : 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus-visible:outline-blue-500'
+                            }`}
                     >
                         VIEW RESUME
                     </a>
@@ -134,15 +146,13 @@ const HeroSection = () => {
                 <div className="sm:pt-4 ">
                     <button
                         onClick={handleCopyEmail}
-                        className={`inline-flex items-center gap-2 text-sm transition-colors duration-200 cursor-pointer ${
-                            darkMode ? 'text-gray-400 hover:text-violet-400' : 'text-gray-600 hover:text-blue-600'
-                        }`}
+                        className={`inline-flex items-center gap-2 text-sm transition-colors duration-200 cursor-pointer ${darkMode ? 'text-gray-400 hover:text-violet-400' : 'text-gray-600 hover:text-blue-600'
+                            }`}
                     >
                         <span className="h-2 w-2 rounded-full bg-green-500" />
                         {email}
-                        {copied && <span className={`text-xs font-semibold ${
-                            darkMode ? 'text-green-400' : 'text-green-600'
-                        }`}>✓ Copied!</span>}
+                        {copied && <span className={`text-xs font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'
+                            }`}>✓ Copied!</span>}
                     </button>
                 </div>
             </div>

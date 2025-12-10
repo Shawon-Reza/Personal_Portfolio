@@ -9,10 +9,12 @@
     "postinstall": "node -e \"try{ require('fs').chmodSync('./node_modules/.bin/vite', 0o755);}catch(e){}\""
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/react-query": "^5.90.8",
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
+    "gsap": "^3.14.1",
     "motion": "^12.23.25",
     "ogl": "^1.0.11",
     "postprocessing": "^6.38.0",
@@ -21,6 +23,7 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.5",
     "react-toastify": "^11.0.5",
+    "rough-notation": "^0.5.1",
     "sweetalert2": "^11.26.3",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
