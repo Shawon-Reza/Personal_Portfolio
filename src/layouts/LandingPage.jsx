@@ -3,6 +3,7 @@ import Navbar from '../components/layout/Navbar'
 import HeroSection from '../features/HeroSection'
 import ClickSpark from '../components/ui/ClickSpark'
 import AboutSection from '../features/AboutSection'
+import GithubActivity from '../features/GithubActivity'
 import Footer from '../components/layout/Footer'
 
 
@@ -24,6 +25,9 @@ const LandingPage = () => {
                 </section>
                 <section>
                     <AboutSection />
+                </section>
+                <section>
+                    <GithubActivity />
                 </section>
                 <section className=''>
                     <Footer></Footer>
