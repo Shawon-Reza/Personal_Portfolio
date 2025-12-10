@@ -3,7 +3,7 @@ import Navbar from '../components/layout/Navbar'
 import HeroSection from '../features/HeroSection'
 import ClickSpark from '../components/ui/ClickSpark'
 import AboutSection from '../features/AboutSection'
-import { div } from 'motion/react-client'
+import Footer from '../components/layout/Footer'
 
 
 const LandingPage = () => {
@@ -24,6 +24,9 @@ const LandingPage = () => {
                 </section>
                 <section>
                     <AboutSection />
+                </section>
+                <section className=''>
+                    <Footer></Footer>
                 </section>
             </ClickSpark>
         </div>
