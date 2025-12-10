@@ -24,6 +24,7 @@
     "react-router-dom": "^7.9.5",
     "react-toastify": "^11.0.5",
     "rough-notation": "^0.5.1",
+    "simplex-noise": "^4.0.3",
     "sweetalert2": "^11.26.3",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",

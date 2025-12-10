@@ -1,21 +1,24 @@
 
 import Orb from '../components/ui/Orb'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useDarkMode } from '../Contexts/ThemeContext'
 import PixelBlast from '../components/ui/PixelBlast'
 import FloatingLines from '../components/ui/FloatingLines'
 import { Highlighter } from '../components/ui/Highlighter'
 import { TypingAnimation } from '../components/ui/TypingAnimation'
 import { TextHoverEffect } from '../components/ui/TextHoverEffectDemo'
+import { Vortex } from '../components/ui/Vortex'
 
 const HeroSection = () => {
     const { darkMode } = useDarkMode()
     const [copied, setCopied] = useState(false)
     const [hue, setHue] = useState(0)
-    const [bgVariant] = useState(() => {
-        const variants = ['pixel', 'floatingLines']
+    const [bgVariant, setBgVariant] = useState(() => {
+        const variants = ['pixel', 'floatingLines', 'vortex']
         return variants[Math.floor(Math.random() * variants.length)]
     })
+    const sectionRef = useRef(null)
+    const hasAnimatedRef = useRef(false)
     const email = 'shawon.reza.dev@gmail.com'
 
     useEffect(() => {
@@ -23,6 +26,35 @@ const HeroSection = () => {
             setHue(Math.random() * 360)
         }, 3000)
         return () => clearInterval(interval)
+    }, [])
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && hasAnimatedRef.current) {
+                        // Change background when returning to view after leaving
+                        const variants = ['pixel', 'floatingLines', 'vortex']
+                        const newVariant = variants[Math.floor(Math.random() * variants.length)]
+                        setBgVariant(newVariant)
+                    } else if (!entry.isIntersecting) {
+                        // Mark that we've left the section
+                        hasAnimatedRef.current = true
+                    }
+                })
+            },
+            { threshold: 0.1 }
+        )
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current)
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current)
+            }
+        }
     }, [])
 
     const handleCopyEmail = async () => {
@@ -36,10 +68,24 @@ const HeroSection = () => {
     }
 
     return (
-        <div className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden text-center px-6 transition-colors duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
+        <div ref={sectionRef} className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden text-center px-6 transition-colors duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
             }`}>
 
             {/* Random background: only one will be displayed */}
+            {bgVariant === 'vortex' && (
+                <div
+                    className='min-h-[calc(100vh-80px)]'
+                    style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 10 }}>
+                    <Vortex
+                        backgroundColor={darkMode ? '#000000' : 'transparent'}
+                        rangeY={800}
+                        particleCount={500}
+                        baseHue={darkMode ? 220 : 210}
+                        className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+                    />
+                </div>
+            )}
+
             {bgVariant === 'pixel' && (
                 <div
                     className='min-h-[calc(100vh-80px)]'
@@ -106,13 +152,13 @@ const HeroSection = () => {
                         <TypingAnimation>
                             HI, I'M
                         </TypingAnimation>
-                        
+
                         <span className={`block text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 -my-6 ${darkMode ? 'text-violet-400' : 'text-blue-600'
                             }`}>
                             {/* <TypingAnimation>
                                 Shawon Reza
                             </TypingAnimation> */}
-                            <TextHoverEffect text="Shawon Reza"  />
+                            <TextHoverEffect text="Shawon Reza" />
                         </span>
                     </h1>
 

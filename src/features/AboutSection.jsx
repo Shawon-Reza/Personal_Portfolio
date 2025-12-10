@@ -130,7 +130,7 @@ const AboutSection = ({ content = defaultContent }) => {
                         <p className={`text-lg transition-colors duration-300 ] ${darkMode ? 'text-gray-300' : 'text-gray-700'
                             }`}>{headline}</p>
 
-                        <TypewriterEffectSmooth words={words} className="font-normal opacity-60" />
+                        <TypewriterEffectSmooth words={words} className="font-normal opacity-60 text-sm" />
 
                         <p className={`text-base transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'
                             }`}>{subheadline}</p>
@@ -213,7 +213,7 @@ const AboutSection = ({ content = defaultContent }) => {
 
 
                             {stats?.map((stat) => (
-                                <div key={stat.label} className={`rounded-3xl p-3 relative text-center shadow-sm transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-white'
+                                <div key={stat.label} className={`hover:scale-105 transform transition-all duration-700 rounded-3xl p-3 relative text-center shadow-xl  ${darkMode ? 'bg-gray-900' : 'bg-white'
                                     }`}>
                                     <ShineBorder
                                         borderWidth={2}

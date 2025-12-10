@@ -138,7 +138,7 @@ export const TypewriterEffectSmooth = ({
 
   return (
     <div className={cn("my-6", className)}>
-      <div className="text-xs sm:text-base md:text-xl lg:text-3xl xl:text-5xl">
+      <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
         {renderWords()}
       </div>
     </div>
