@@ -2,6 +2,7 @@ import React from 'react'
 import { useDarkMode } from '../Contexts/ThemeContext'
 import { ShineBorder } from '../components/ui/ShineBorder'
 import { PinContainer } from '../components/ui/PinContainer'
+import { TypewriterEffectSmooth } from '../components/ui/TypewriterEffectSmooth'
 
 
 // Data-driven hero section; pass a custom `content` prop to override defaults.
@@ -46,6 +47,51 @@ const AboutSection = ({ content = defaultContent }) => {
         stats,
     } = content
 
+    const words = [
+        { text: "As" },
+        { text: "a" },
+        { text: "Full" },
+        { text: "Stack" },
+        { text: "Web" },
+        { text: "developer," },
+        { text: "I" },
+        { text: "design" },
+        { text: "and" },
+        { text: "build" },
+        { text: "scalable," },
+        { text: "high-performance" },
+        { text: "web" },
+        { text: "applications" },
+        { text: "that" },
+        { text: "combine" },
+        { text: "intuitive" },
+        { text: "user" },
+        { text: "experiences" },
+        { text: "with" },
+        { text: "robust," },
+        { text: "maintainable" },
+        { text: "backend" },
+        { text: "systems." },
+        { text: "Leveraging" },
+        { text: "expertise" },
+        { text: "across" },
+        { text: "frontend" },
+        { text: "and" },
+        { text: "backend" },
+        { text: "technologies," },
+        { text: "I" },
+        { text: "deliver" },
+        { text: "solutions" },
+        { text: "that" },
+        { text: "drive" },
+        { text: "efficiency," },
+        { text: "reliability," },
+        { text: "and" },
+        { text: "business" },
+        { text: "impact." }
+    ];
+
+
     const renderVariant = (variant) => {
         if (variant === 'primary') {
             return darkMode
@@ -81,8 +127,11 @@ const AboutSection = ({ content = defaultContent }) => {
                             <span className={`block text-lg font-semibold transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'
                                 }`}>{role}</span>
                         </h1>
-                        <p className={`text-lg transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                        <p className={`text-lg transition-colors duration-300 ] ${darkMode ? 'text-gray-300' : 'text-gray-700'
                             }`}>{headline}</p>
+
+                        <TypewriterEffectSmooth words={words} className="font-normal opacity-60" />
+
                         <p className={`text-base transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'
                             }`}>{subheadline}</p>
                     </div>

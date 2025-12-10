@@ -5,6 +5,8 @@ import { useDarkMode } from '../Contexts/ThemeContext'
 import PixelBlast from '../components/ui/PixelBlast'
 import FloatingLines from '../components/ui/FloatingLines'
 import { Highlighter } from '../components/ui/Highlighter'
+import { TypingAnimation } from '../components/ui/TypingAnimation'
+import { TextHoverEffect } from '../components/ui/TextHoverEffectDemo'
 
 const HeroSection = () => {
     const { darkMode } = useDarkMode()
@@ -100,9 +102,18 @@ const HeroSection = () => {
 
                     <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${darkMode ? 'text-gray-100' : 'text-gray-900'
                         }`}>
-                        HI, I'M
-                        <span className={`block mt-2 text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 ${darkMode ? 'text-violet-400' : 'text-blue-600'
-                            }`}>Shawon Reza</span>
+
+                        <TypingAnimation>
+                            HI, I'M
+                        </TypingAnimation>
+                        
+                        <span className={`block text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 -my-6 ${darkMode ? 'text-violet-400' : 'text-blue-600'
+                            }`}>
+                            {/* <TypingAnimation>
+                                Shawon Reza
+                            </TypingAnimation> */}
+                            <TextHoverEffect text="Shawon Reza"  />
+                        </span>
                     </h1>
 
                     <h2 className={`md:my-6 text-sm md:text-base lg:text-lg font-medium max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-700'
@@ -111,15 +122,15 @@ const HeroSection = () => {
                         {/* action	"highlight" | "circle" | "box" | "bracket" | "crossed-off" | "strike-through" | "underline" */}
 
                         <Highlighter action="highlight" color="#FF9800">
-                            FRONTEND DEVELOPER
+                            FUll-Stack DEVELOPER
                         </Highlighter>
 
-                        <br /> BUILDING COMPLETE WEB APPLICATIONS <br />FROM 
+                        <br /> BUILDING COMPLETE WEB APPLICATIONS <br />FROM {" "}
                         <Highlighter action="underline" color="#FF9800">
                             FRONTEND
-                        </Highlighter> TO
-                        
-                         <Highlighter action="underline" color="#FF9800">
+                        </Highlighter>  TO
+
+                        {" "} <Highlighter action="underline" color="#FF9800">
                             BACKEND
                         </Highlighter> <br />
                         MADE TO BE FAST, CLEAN, AND USER-FRIENDLY
