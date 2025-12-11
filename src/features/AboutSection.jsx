@@ -3,6 +3,10 @@ import { useDarkMode } from '../Contexts/ThemeContext'
 import { ShineBorder } from '../components/ui/ShineBorder'
 import { PinContainer } from '../components/ui/PinContainer'
 import { TypewriterEffectSmooth } from '../components/ui/TypewriterEffectSmooth'
+import { Meteors } from '../components/ui/Meteors'
+import { TextHoverEffect } from '../components/ui/TextHoverEffectDemo'
+import profile_img from '../assets/images/profile_img.jpg'
+
 
 
 // Data-driven hero section; pass a custom `content` prop to override defaults.
@@ -130,7 +134,7 @@ const AboutSection = ({ content = defaultContent }) => {
                         <p className={`text-lg transition-colors duration-300 ] ${darkMode ? 'text-gray-300' : 'text-gray-700'
                             }`}>{headline}</p>
 
-                        <TypewriterEffectSmooth words={words} className="font-normal opacity-60 text-sm" />
+                        <TypewriterEffectSmooth words={words} className="font-normal opacity-60 " />
 
                         <p className={`text-base transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'
                             }`}>{subheadline}</p>
@@ -174,10 +178,7 @@ const AboutSection = ({ content = defaultContent }) => {
                 </div>
 
                 {/* Right side Content */}
-
-                <div className="flex-1 relative">
-
-
+                <div className="flex relative">
                     <div className={`relative mx-auto max-w-md rounded-3xl p-6 shadow-xl backdrop-blur transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-gray-900/70' : 'border-gray-200 bg-white/80'
                         }`}>
                         <ShineBorder
@@ -185,10 +186,9 @@ const AboutSection = ({ content = defaultContent }) => {
                             duration={10}
                             className="absolute inset-0"
                         />
-
                         {/* Middle Contents */}
                         <PinContainer>
-                            <div className={`relative overflow-hidden rounded-2xl p-[3px] min-w-[350px] `}>
+                            <div className={`relative overflow-hidden rounded-2xl  p-[3px] min-w-[350px] `}>
                                 <ShineBorder
                                     borderWidth={2}
                                     duration={10}
@@ -196,21 +196,41 @@ const AboutSection = ({ content = defaultContent }) => {
                                 />
                                 <div className={`rounded-[14px] px-8 py-10 text-center  transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'
                                     }`}>
-                                    <div className={`mx-auto mb-6 h-24 w-24 rounded-full shadow-lg ${darkMode ? 'bg-linear-to-br from-violet-500 to-fuchsia-400' : 'bg-linear-to-br from-blue-500 to-emerald-400'
-                                        }`} />
-                                    <h2 className={`text-xl font-semibold transition-colors duration-300 ${darkMode ? 'text-gray-100' : 'text-gray-900'
-                                        }`}>{name}</h2>
+                                    <div className="relative mx-auto mb-6 w-fit group">
+                                        {/* Outer rotating gradient glow */}
+                                        <div className={`absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700 animate-spin ${darkMode ? 'bg-linear-to-r from-violet-600 via-indigo-600 to-violet-600' : 'bg-linear-to-r from-blue-500 via-cyan-500 to-blue-500'}`} style={{ animationDuration: '4s' }} />
+
+                                        {/* Double gradient ring with shimmer effect */}
+                                        <div className={`absolute -inset-1.5 rounded-full blur-xl opacity-80 group-hover:opacity-100 transition-all duration-500 ${darkMode ? 'bg-linear-to-b from-violet-500/60 via-purple-500/40 to-transparent' : 'bg-linear-to-b from-blue-400/60 via-purple-400/40 to-transparent'}`} />
+
+                                        {/* Primary gradient border with depth */}
+                                        <div className={`relative h-24 w-24 rounded-full p-1 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-violet-500/50 shadow-xl ${darkMode ? 'bg-linear-to-br from-violet-500 via-purple-600 to-indigo-500' : 'bg-linear-to-br from-blue-500 via-purple-500 to-cyan-500'}`}>
+                                            {/* Inner ring accent */}
+                                            <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-linear-to-tr from-violet-400/20 to-transparent' : 'bg-linear-to-tr from-white/30 to-transparent'}`} />
+
+                                            <img
+                                                className='relative h-full w-full rounded-full object-cover shadow-inner'
+                                                src={profile_img}
+                                                alt="Profile" />
+                                        </div>
+
+                                        {/* Inner subtle accent circle */}
+                                        <div className={`absolute -inset-0.5 rounded-full ${darkMode ? 'border border-violet-400/30' : 'border border-blue-300/40'}`} />
+                                    </div>
+
+                                    <div className='scale-80 w-fit -my-5'>
+                                        <TextHoverEffect text={name} />
+                                    </div>
                                     <p className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'
                                         }`}>{role}</p>
                                     <p className={`mt-3 text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'
                                         }`}>{subheadline}</p>
                                 </div>
+                                <Meteors number={9} className={""} />
                             </div>
                         </PinContainer>
-
                         <div className={`mt-10 grid grid-cols-1 gap-3 rounded-2xl p-4 sm:grid-cols-3 transition-colors duration-300 ${darkMode ? 'bg-gray-800/60' : 'bg-gray-50'
                             }`}>
-
 
                             {stats?.map((stat) => (
                                 <div key={stat.label} className={`hover:scale-105 transform transition-all duration-700 rounded-3xl p-3 relative text-center shadow-xl  ${darkMode ? 'bg-gray-900' : 'bg-white'
@@ -227,10 +247,15 @@ const AboutSection = ({ content = defaultContent }) => {
                                 </div>
                             ))}
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
+
             </div>
+
+
+
         </section>
     )
 }

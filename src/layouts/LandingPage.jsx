@@ -5,6 +5,7 @@ import ClickSpark from '../components/ui/ClickSpark'
 import AboutSection from '../features/AboutSection'
 import GithubActivity from '../features/GithubActivity'
 import Footer from '../components/layout/Footer'
+import ContactSection from '../features/ContactSection'
 
 
 const LandingPage = () => {
@@ -28,6 +29,9 @@ const LandingPage = () => {
                 </section>
                 <section>
                     <GithubActivity />
+                </section>
+                <section className=''>
+                    <ContactSection></ContactSection>
                 </section>
                 <section className=''>
                     <Footer></Footer>

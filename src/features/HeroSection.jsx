@@ -8,6 +8,7 @@ import { Highlighter } from '../components/ui/Highlighter'
 import { TypingAnimation } from '../components/ui/TypingAnimation'
 import { TextHoverEffect } from '../components/ui/TextHoverEffectDemo'
 import { Vortex } from '../components/ui/Vortex'
+import profile_img from '../assets/images/profile_img.jpg'
 
 const HeroSection = () => {
     const { darkMode } = useDarkMode()
