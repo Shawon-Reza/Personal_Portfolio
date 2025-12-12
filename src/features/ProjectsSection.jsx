@@ -1,5 +1,6 @@
 import StickyScroll from "../components/ui/StickyScroll";
 import { useDarkMode } from "../Contexts/ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
     {
@@ -74,6 +75,11 @@ const content = projects.map((project, i) => ({
 export function StickyScrollRevealDemo() {
 
     const { darkMode } = useDarkMode();
+    const navigate = useNavigate();
+
+    const handleViewAll = () => {
+        navigate("/projects");
+    };
 
     return (
         <section className={`relative w-full pt-10 sm:pt-12 overflow-hidden ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
@@ -92,6 +98,14 @@ export function StickyScrollRevealDemo() {
 
             <div className="">
                 <StickyScroll content={content} />
+            </div>
+
+            <div className="relative flex justify-center pb-12 pt-6">
+                <button
+                    onClick={handleViewAll}
+                    className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    View All Projects
+                </button>
             </div>
         </section>
     );

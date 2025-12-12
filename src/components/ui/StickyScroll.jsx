@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { motion } from "motion/react";
 import { useDarkMode } from "../../Contexts/ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 const scrollbarStyles = `
   /* Webkit browsers (Chrome, Safari, Edge) */
@@ -38,6 +39,7 @@ export const StickyScroll = ({
     const safeContent = Array.isArray(content) ? content : [];
     const cardLength = safeContent.length;
     const { darkMode } = useDarkMode();
+    const navigate = useNavigate();
 
     if (!cardLength) {
         return (
@@ -128,6 +130,15 @@ export const StickyScroll = ({
                                 ))}
                             </motion.ul>
                         ) : null}
+                        <motion.button
+                            onClick={() => navigate(`/project/${item.title.toLowerCase().replace(/\s+/g, "-")}`)}
+                            className="mt-8 px-6 py-2 rounded-full font-semibold text-white bg-linear-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 w-fit"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
+                            viewport={{ once: false, amount: 0.3 }}>
+                            View Details
+                        </motion.button>
                     </div>
                 </motion.section>
             ))}

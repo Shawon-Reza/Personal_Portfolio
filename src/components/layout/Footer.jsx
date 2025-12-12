@@ -55,7 +55,7 @@ const Footer = () => {
                   Shawon Reza
 
                 </h3>
-                
+
               </div>
               <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl">
                 Building fast, clean, and user-friendly experiences—front to back.
