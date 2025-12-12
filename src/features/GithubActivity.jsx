@@ -124,7 +124,7 @@ const GithubActivity = () => {
                         className={`relative overflow-hidden rounded-2xl border px-4 sm:px-6 py-6 sm:py-8 shadow-lg transition-colors duration-300 ${darkMode ? 'border-slate-800/80 bg-slate-900/60' : 'border-slate-200/80 bg-white/80'
                             } backdrop-blur`}
                     >
-                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.12),transparent_35%)]" />
+                        <div className={`pointer-events-none absolute inset-0 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'}`} />
                         <div className="relative space-y-4">
                             <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                                 Contribution Graph
@@ -148,8 +148,7 @@ const GithubActivity = () => {
                         {/* Total Contributions */}
                         <motion.div
                             variants={itemVariants}
-                            className={`relative overflow-hidden rounded-2xl border px-6 py-8 shadow-lg transition-all duration-300 ${darkMode ? 'border-slate-800/80 bg-slate-900/60' : 'border-slate-200/80 bg-white/80'
-                                } backdrop-blur hover:shadow-xl hover:-translate-y-1`}
+                            className={`relative overflow-hidden rounded-2xl border px-6 py-8 shadow-lg transition-all duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950 border-gray-500' : 'bg-linear-to-br from-white via-blue-50 to-purple-50 border-gray-200'} backdrop-blur hover:shadow-xl hover:-translate-y-1`}
                         >
                             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.12),transparent_35%)]" />
 
@@ -179,10 +178,7 @@ const GithubActivity = () => {
                         {/* Current Streak */}
                         <motion.div
                             variants={itemVariants}
-                            className={`relative overflow-hidden rounded-2xl border px-6 py-8 shadow-lg transition-all duration-300 ${darkMode
-                                ? 'border-amber-600/50 bg-linear-to-br from-amber-950/60 to-amber-900/40'
-                                : 'border-amber-300/50 bg-linear-to-br from-amber-50/80 to-amber-100/50'
-                                } backdrop-blur hover:shadow-xl hover:-translate-y-1`}
+                            className={`relative overflow-hidden rounded-2xl border px-6 py-8 shadow-lg transition-all duration-300 ${darkMode ? 'bg-linear-to-bl from-slate-950 via-purple-950 to-slate-950 border-gray-500' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'} backdrop-blur hover:shadow-xl hover:-translate-y-1 border-gray-200`}
                         >
                             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(217,119,6,0.12),transparent_35%)]" />
 
@@ -219,8 +215,7 @@ const GithubActivity = () => {
                         {/* Longest Streak */}
                         <motion.div
                             variants={itemVariants}
-                            className={`relative overflow-hidden rounded-2xl border px-6 py-8 shadow-lg transition-all duration-300 ${darkMode ? 'border-slate-800/80 bg-slate-900/60' : 'border-slate-200/80 bg-white/80'
-                                } backdrop-blur hover:shadow-xl hover:-translate-y-1`}
+                            className={`relative overflow-hidden rounded-2xl border  px-6 py-8 shadow-lg transition-all duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950 border-gray-500' : 'bg-linear-to-br from-white via-blue-50 to-purple-50 border-gray-200'} backdrop-blur hover:shadow-xl hover:-translate-y-1`}
                         >
                             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.12),transparent_35%)]" />
 

@@ -24,16 +24,17 @@ const Footer = () => {
   return (
     <footer
       className={`relative  transition-colors duration-500 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
-            }`}
+        }`}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
 
       <div className="relative mx-auto px-6  md:px-10 lg:px-16 py-16 sm:py-20 flex flex-col gap-8">
-        <div className={`relative overflow-hidden rounded-3xl border px-6 py-8 sm:px-10 sm:py-10 shadow-lg ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
-            }`}>
+       
+        <div className={`relative overflow-hidden rounded-3xl  px-6 py-8 sm:px-10 sm:py-10 shadow-lg ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
+          } hover:scale-102 transition-transform duration-700` }>
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.14),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(168,85,247,0.12),transparent_30%)]" />
           {/* Top card */}
-          <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between ">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold bg-slate-200/70 text-slate-700 dark:bg-slate-800/80 dark:text-slate-200 backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -49,10 +50,10 @@ const Footer = () => {
                 Building fast, clean, and user-friendly experiences—front to back.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">Full-stack</span>
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">React • Node</span>
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">Express</span>
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">PostgreSQL</span>
+                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5 ">Full-stack</span>
+                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5">React • Node</span>
+                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5">Express</span>
+                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5">PostgreSQL</span>
               </div>
             </div>
 
@@ -62,8 +63,8 @@ const Footer = () => {
                   key={link.label}
                   href={link.href}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 shadow-sm hover:-translate-y-0.5 ${darkMode
-                      ? 'bg-slate-900 text-slate-100 hover:bg-slate-800 border border-slate-800'
-                      : 'bg-white text-slate-800 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-slate-900 text-slate-100 hover:bg-slate-800 border border-slate-800'
+                    : 'bg-white text-slate-800 hover:bg-slate-100 border border-slate-200'
                     }`}
                 >
                   {link.label}
@@ -95,12 +96,9 @@ const Footer = () => {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`group inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 shadow-sm hover:-translate-y-0.5 ${darkMode
-                      ? 'bg-slate-900 text-slate-100 hover:bg-slate-800 border border-slate-800'
-                      : 'bg-white text-slate-800 hover:bg-slate-100 border border-slate-200'
-                    }`}
+                  className={`group inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5 ${darkMode ? 'bg-slate-800/60 border border-slate-700 text-white focus:ring-violet-500/60' : 'bg-slate-100 border border-slate-200 hover:bg-white'}`}
                 >
-                  <span className={`flex h-6 w-6 items-center justify-center rounded-lg text-[11px] font-semibold transition-colors duration-200 ${darkMode ? 'bg-slate-800 group-hover:bg-slate-700' : 'bg-slate-100 group-hover:bg-slate-200'
+                  <span className={`flex h-6 w-6 items-center justify-center rounded-lg text-[11px] font-semibold transition-colors duration-500 ${darkMode ? 'bg-slate-800 group-hover:bg-slate-700' : 'bg-slate-100 group-hover:bg-slate-200'
                     }`}>{item.badge}</span>
                   {item.label}
                 </a>
@@ -116,8 +114,8 @@ const Footer = () => {
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 shadow-sm hover:-translate-y-0.5 ${darkMode
-                  ? 'bg-violet-600 text-white hover:bg-violet-700'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                ? 'bg-violet-600 text-white hover:bg-violet-700'
+                : 'bg-blue-600 text-white hover:bg-blue-700'
                 }`}
             >
               Back to top

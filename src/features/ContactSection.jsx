@@ -72,7 +72,7 @@ const ContactSection = () => {
                 >
                     <motion.div variants={itemVariants} className="space-y-3 text-center">
                         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500 dark:text-violet-300">Get in touch</p>
-                        <h2 className="text-3xl sm:text-4xl font-bold">Let's build something great</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold dark:text-white/80 ">Let's build something great</h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                             Drop a line about projects, collaborations, or just say hi. I typically reply within one business day.
                         </p>
@@ -85,6 +85,7 @@ const ContactSection = () => {
                             whileHover={{ y: -4, scale: 1.01 }}
                             transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                             className={`relative overflow-hidden rounded-2xl ${cardBg} backdrop-blur-xl p-6 sm:p-8`}>
+                                 <div className={`pointer-events-none absolute inset-0 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'}`} />
                             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.12),transparent_35%)]" />
                             <div className="relative space-y-6">
                                 <div className="flex items-center gap-3">
@@ -92,12 +93,13 @@ const ContactSection = () => {
                                         <FiMail size={18} />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Send a message</h3>
+                                        <h3 className="text-lg font-semibold dark:text-white/80">Send a message</h3>
                                         <p className="text-sm text-slate-500 dark:text-slate-400">I'll get your note instantly.</p>
                                     </div>
                                 </div>
 
                                 <form className="space-y-5" onSubmit={handleSubmit}>
+                                    
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <label className="space-y-2">
                                             <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Name</span>
@@ -106,7 +108,7 @@ const ContactSection = () => {
                                                 value={form.name}
                                                 onChange={handleChange}
                                                 placeholder="Jane Doe"
-                                                className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-900 border border-slate-700 focus:ring-violet-500/60' : 'bg-white border border-slate-200 focus:ring-blue-500/40'}`}
+                                                className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-800/60 border border-slate-700/60 text-white focus:ring-violet-500/60' : 'bg-white/50 border border-slate-200/60 text-slate-900 focus:ring-blue-500/40'}`}
                                             />
                                         </label>
                                         <label className="space-y-2">
@@ -118,7 +120,7 @@ const ContactSection = () => {
                                                 onChange={handleChange}
                                                 placeholder="you@example.com"
                                                 required
-                                                className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-900 border border-slate-700 focus:ring-violet-500/60' : 'bg-white border border-slate-200 focus:ring-blue-500/40'}`}
+                                                className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-800/60 border border-slate-700/60 text-white focus:ring-violet-500/60' : 'bg-white/50 border border-slate-200/60 text-slate-900 focus:ring-blue-500/40'}`}
                                             />
                                         </label>
                                     </div>
@@ -130,7 +132,7 @@ const ContactSection = () => {
                                             value={form.subject}
                                             onChange={handleChange}
                                             placeholder="Let's talk about a project"
-                                            className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-900 border border-slate-700 focus:ring-violet-500/60' : 'bg-white border border-slate-200 focus:ring-blue-500/40'}`}
+                                            className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-800/60 border border-slate-700/60 text-white focus:ring-violet-500/60' : 'bg-white/50 border border-slate-200/60 text-slate-900 focus:ring-blue-500/40'}`}
                                         />
                                     </label>
 
@@ -143,7 +145,7 @@ const ContactSection = () => {
                                             placeholder="Share details, timelines, or goals..."
                                             rows={5}
                                             required
-                                            className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-900 border border-slate-700 focus:ring-violet-500/60' : 'bg-white border border-slate-200 focus:ring-blue-500/40'}`}
+                                            className={`w-full rounded-xl px-4 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${darkMode ? 'bg-slate-800/60 border border-slate-700/60 text-white focus:ring-violet-500/60' : 'bg-white/50 border border-slate-200/60 text-slate-900 focus:ring-blue-500/40'}`}
                                         />
                                     </label>
 
@@ -153,7 +155,7 @@ const ContactSection = () => {
                                             type="submit"
                                             whileHover={{ y: -1, scale: 1.02 }}
                                             whileTap={{ scale: 0.97 }}
-                                            className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-offset-2 ${darkMode ? 'bg-violet-600 text-white hover:bg-violet-700 focus-visible:outline-violet-500 shadow-lg shadow-violet-600/25' : 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-500 shadow-lg shadow-blue-600/20'}`}
+                                            className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-offset-2 ${darkMode ? 'bg-violet-600 text-white/80 hover:bg-violet-700 focus-visible:outline-violet-500 shadow-lg shadow-violet-600/25' : 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-500 shadow-lg shadow-blue-600/20'}`}
                                         >
                                             Send message
                                             <FiSend size={16} />
@@ -165,19 +167,22 @@ const ContactSection = () => {
 
                         {/* Contact cards */}
                         <motion.div variants={itemVariants} className="space-y-4">
+                            
                             <motion.div
                                 variants={itemVariants}
                                 whileHover={{ y: -3, scale: 1.01 }}
                                 transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                                 className={`relative overflow-hidden rounded-2xl ${cardBg} backdrop-blur-xl p-6`}>
-                                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.12),transparent_35%)]" />
+                                    
+                                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
+
                                 <div className="relative space-y-4">
                                     <div className="flex items-center gap-3">
                                         <div className={`h-10 w-10 rounded-full flex items-center justify-center ${darkMode ? 'bg-white/5 text-cyan-200' : 'bg-cyan-50 text-cyan-600'} border border-white/10`}>
                                             <FiMapPin size={18} />
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-semibold">Location & Contact</h3>
+                                            <h3 className="text-lg font-semibold dark:text-white/80">Location & Contact</h3>
                                             <p className="text-sm text-slate-500 dark:text-slate-400">Dhaka, Bangladesh · Open to remote</p>
                                         </div>
                                     </div>
@@ -198,7 +203,7 @@ const ContactSection = () => {
                                             href="https://github.com/shawon-reza"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 ${darkMode ? 'bg-white/5 border border-white/10 hover:bg-white/10' : 'bg-slate-100 border border-slate-200 hover:bg-white'}`}
+                                            className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 ${darkMode ? 'bg-slate-800/60 border border-slate-700 text-white focus:ring-violet-500/60' : 'bg-slate-100 border border-slate-200 hover:bg-white'} `}
                                         >
                                             <FiGithub />
                                             GitHub
@@ -207,7 +212,7 @@ const ContactSection = () => {
                                             href="https://www.linkedin.com/in/shawon-reza/"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 ${darkMode ? 'bg-white/5 border border-white/10 hover:bg-white/10' : 'bg-slate-100 border border-slate-200 hover:bg-white'}`}
+                                            className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 ${darkMode ? 'bg-slate-800/60 border border-slate-700 text-white focus:ring-violet-500/60' : 'bg-slate-100 border border-slate-200 hover:bg-white'}`}
                                         >
                                             <FiLinkedin />
                                             LinkedIn
@@ -221,10 +226,12 @@ const ContactSection = () => {
                                 whileHover={{ y: -3, scale: 1.01 }}
                                 transition={{ type: 'spring', stiffness: 220, damping: 18 }}
                                 className={`relative overflow-hidden rounded-2xl ${cardBg} backdrop-blur-xl p-6`}>
-                                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.12),transparent_35%)]" />
+                                    
+                                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
+
                                 <div className="relative space-y-3">
-                                    <h3 className="text-lg font-semibold flex items-center gap-2">
-                                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                                    <h3 className="text-lg font-semibold flex items-center gap-2 dark:text-white/80">
+                                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse " />
                                         Availability
                                     </h3>
                                     <p className="text-sm text-slate-600 dark:text-slate-300">

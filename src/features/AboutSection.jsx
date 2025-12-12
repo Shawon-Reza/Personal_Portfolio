@@ -178,8 +178,10 @@ const AboutSection = ({ content = defaultContent }) => {
 
                 {/* Right side Content */}
                 <div className="flex relative">
+
                     <div className={`relative mx-auto max-w-md rounded-3xl p-6 shadow-xl backdrop-blur transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-gray-900/70' : 'border-gray-200 bg-white/80'
                         }`}>
+                        <div className="rounded-3xl pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
                         <ShineBorder
                             borderWidth={2}
                             duration={10}
@@ -195,6 +197,8 @@ const AboutSection = ({ content = defaultContent }) => {
                                 />
                                 <div className={`rounded-[14px] px-8 py-10 text-center  transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-white'
                                     }`}>
+                                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
+
                                     <div className="relative mx-auto mb-6 w-fit group">
                                         {/* Outer rotating gradient glow */}
                                         <div className={`absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700 animate-spin ${darkMode ? 'bg-linear-to-r from-violet-600 via-indigo-600 to-violet-600' : 'bg-linear-to-r from-blue-500 via-cyan-500 to-blue-500'}`} style={{ animationDuration: '4s' }} />
@@ -234,6 +238,7 @@ const AboutSection = ({ content = defaultContent }) => {
                             {stats?.map((stat) => (
                                 <div key={stat.label} className={`hover:scale-105 transform transition-all duration-700 rounded-3xl p-3 relative text-center shadow-xl  ${darkMode ? 'bg-gray-900' : 'bg-white'
                                     }`}>
+                                    <div className="rounded-3xl pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
                                     <ShineBorder
                                         borderWidth={2}
                                         duration={10}
