@@ -40,7 +40,7 @@ const ContactSection = () => {
         : 'bg-white/80 border border-slate-200/70 shadow-[0_10px_40px_-24px_rgba(15,23,42,0.35)]'
 
     return (
-        <section className={`relative py-16 sm:py-20 transition-colors duration-500 ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
+        <section className={`relative py-16 sm:py-20 transition-colors duration-500 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
             }`}>
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(139,92,246,0.12),transparent_35%),radial-gradient(circle_at_85%_10%,rgba(56,189,248,0.12),transparent_30%)]" />
             {/* Floating ambient orbs */}
@@ -59,7 +59,7 @@ const ContactSection = () => {
                 transition={{ duration: 18, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
             />
 
-            <div className="relative mx-auto max-w-6xl px-6">
+            <div className="relative mx-auto max-w-7xl px-6">
                 <motion.div
                     ref={containerRef}
                     initial="hidden"

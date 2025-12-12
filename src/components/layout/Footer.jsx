@@ -23,14 +23,14 @@ const Footer = () => {
 
   return (
     <footer
-      className={`relative  transition-colors duration-500 ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
-        }`}
+      className={`relative  transition-colors duration-500 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
+            }`}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
 
       <div className="relative mx-auto px-6  md:px-10 lg:px-16 py-16 sm:py-20 flex flex-col gap-8">
-        <div className={`relative overflow-hidden rounded-3xl border px-6 py-8 sm:px-10 sm:py-10 shadow-lg ${darkMode ? 'border-slate-800/80 bg-slate-900/60 backdrop-blur' : 'border-slate-200/80 bg-white/80 backdrop-blur'
-          }`}>
+        <div className={`relative overflow-hidden rounded-3xl border px-6 py-8 sm:px-10 sm:py-10 shadow-lg ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
+            }`}>
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.14),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(168,85,247,0.12),transparent_30%)]" />
           {/* Top card */}
           <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">

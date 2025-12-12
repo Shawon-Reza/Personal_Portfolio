@@ -8,7 +8,6 @@ import { Highlighter } from '../components/ui/Highlighter'
 import { TypingAnimation } from '../components/ui/TypingAnimation'
 import { TextHoverEffect } from '../components/ui/TextHoverEffectDemo'
 import { Vortex } from '../components/ui/Vortex'
-import profile_img from '../assets/images/profile_img.jpg'
 
 const HeroSection = () => {
     const { darkMode } = useDarkMode()
@@ -71,6 +70,7 @@ const HeroSection = () => {
     return (
         <div ref={sectionRef} className={`relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden text-center px-6 transition-colors duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
             }`}>
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
 
             {/* Random background: only one will be displayed */}
             {bgVariant === 'vortex' && (
@@ -78,7 +78,7 @@ const HeroSection = () => {
                     className='min-h-[calc(100vh-80px)]'
                     style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 10 }}>
                     <Vortex
-                        backgroundColor={darkMode ? '#000000' : 'transparent'}
+                        backgroundColor={darkMode ? '#transparent' : 'transparent'}
                         rangeY={800}
                         particleCount={500}
                         baseHue={darkMode ? 220 : 210}
@@ -90,7 +90,7 @@ const HeroSection = () => {
             {bgVariant === 'pixel' && (
                 <div
                     className='min-h-[calc(100vh-80px)]'
-                    style={{ width: '100%', height: '100%', position: 'absolute', zIndex: 10 }}>
+                    style={{ width: '200%', height: '100%', position: 'absolute', zIndex: 10 }}>
                     <PixelBlast
                         variant="circle"
                         pixelSize={6}

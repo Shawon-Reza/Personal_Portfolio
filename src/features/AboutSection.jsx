@@ -110,10 +110,9 @@ const AboutSection = ({ content = defaultContent }) => {
     return (
         <section className={`relative overflow-hidden transition-colors duration-300 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
             }`}>
-            <div className={`pointer-events-none absolute inset-0 ${darkMode
-                ? 'bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.15),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(124,58,237,0.12),transparent_25%)]'
-                : 'bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(45,212,191,0.08),transparent_25%)]'
-                }`} />
+            {/* Below Div is for bg vive */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
+
 
             <div className="relative mx-auto flex  flex-col gap-12 px-6 pb-16 pt-20 md:flex-row md:items-center md:pb-24 md:pt-24">
                 <div className="flex-1 space-y-6">

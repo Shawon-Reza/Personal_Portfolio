@@ -96,7 +96,7 @@ const GithubActivity = () => {
     }
 
     return (
-        <section className={`relative py-16 sm:py-20 transition-colors duration-500 ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
+        <section className={`relative py-16 sm:py-20 transition-colors duration-500 ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
             }`}>
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.14),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.12),transparent_30%)]" />
 
