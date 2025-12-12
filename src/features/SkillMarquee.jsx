@@ -14,7 +14,7 @@ const skills = [
     { name: "React", icon: <FaReact />, category: "Frontend" },
     { name: "Next.js", icon: <RiNextjsFill />, category: "Frontend" },
     { name: "JavaScript", icon: <RiJavascriptFill />, category: "Language" },
-    { name: "TypeScript", icon:<SiTypescript />, category: "Language" },
+    { name: "TypeScript", icon: <SiTypescript />, category: "Language" },
     { name: "Tailwind CSS", icon: <RiTailwindCssFill />, category: "Styling" },
     { name: "Node.js", icon: <DiNodejs />, category: "Backend" },
     { name: "Express", icon: <SiExpress />, category: "Backend" },
@@ -105,7 +105,7 @@ export function MarqueeDemo() {
 
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
 
-            <div className="relative mx-auto max-w-7xl px-6">
+            <div className="relative mx-auto  px-2">
 
                 <div className="space-y-8">
                     <div className="text-center space-y-2">

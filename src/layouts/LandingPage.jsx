@@ -7,6 +7,7 @@ import GithubActivity from '../features/GithubActivity'
 import Footer from '../components/layout/Footer'
 import ContactSection from '../features/ContactSection'
 import SkillMarquee from '../features/SkillMarquee'
+import { StickyScrollRevealDemo } from '../features/ProjectsSection'
 
 
 const LandingPage = () => {
@@ -27,6 +28,9 @@ const LandingPage = () => {
                 </section>
                 <section>
                     <AboutSection />
+                </section>
+                <section>
+                    <StickyScrollRevealDemo />
                 </section>
                 <section>
                     <GithubActivity />

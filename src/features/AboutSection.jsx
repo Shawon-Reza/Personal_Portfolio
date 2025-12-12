@@ -24,7 +24,7 @@ const defaultContent = {
     resumeUrl: '#',
     actions: [
         { label: "Let's Connect", href: 'mailto:shawon.reza.dev@gmail.com', variant: 'primary' },
-        { label: 'View Résumé', href: '#', variant: 'ghost' },
+        { label: 'View Resume', href: '#', variant: 'ghost' },
     ],
     tags: ['React 19', 'TypeScript', 'Tailwind CSS', 'Design Systems', 'Performance'],
     stats: [
