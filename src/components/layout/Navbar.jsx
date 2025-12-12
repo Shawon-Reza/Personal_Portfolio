@@ -1,5 +1,3 @@
-
-
 import { NavLink } from 'react-router-dom'
 import DarkModeButton from '../common/DarkModeButton'
 
@@ -17,7 +15,7 @@ const Navbar = () => {
       
       ">
 
-      <div className="mx-auto flex items-center justify-between px-6 py-4">
+      <div className="mx-auto flex items-center justify-between px-6 sm:py-4">
         <div className="text-xl font-bold tracking-tight bg-linear-to-r from-blue-600 to-violet-600 dark:from-violet-400 dark:to-blue-400 bg-clip-text text-transparent">
           Reza
         </div>

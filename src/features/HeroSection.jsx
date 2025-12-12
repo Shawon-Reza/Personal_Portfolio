@@ -147,23 +147,27 @@ const HeroSection = () => {
                 <div className="space-y-1">
 
 
-                    <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${darkMode ? 'text-gray-100' : 'text-gray-900'
+                    <h1 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300  ${darkMode ? 'text-gray-100' : 'text-gray-900'
                         }`}>
 
-                        <TypingAnimation>
-                            HI, I'M
-                        </TypingAnimation>
+                        <div className='-mb-12'>
+                            <TypingAnimation>
+                                HI, I'M
+                            </TypingAnimation>
+                        </div>
 
                         <span className={`block text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 -my-6 ${darkMode ? 'text-violet-400' : 'text-blue-600'
                             }`}>
                             {/* <TypingAnimation>
                                 Shawon Reza
                             </TypingAnimation> */}
-                            <TextHoverEffect text="Shawon Reza" />
+                            <div className='scale-70 sm:scale-100'>
+                                <TextHoverEffect text="Shawon Reza" />
+                            </div>
                         </span>
                     </h1>
 
-                    <h2 className={`md:my-6 text-sm md:text-base lg:text-lg font-medium max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-700'
+                    <h2 className={`md:my-6 text-xs sm:text-sm md:text-base lg:text-lg font-medium max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-700'
                         }`}>
 
                         {/* action	"highlight" | "circle" | "box" | "bracket" | "crossed-off" | "strike-through" | "underline" */}
@@ -187,21 +191,21 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-1 md:gap-4 md:pt-2">
                     <a
                         href="mailto:shawon.reza.dev@gmail.com"
-                        className={`px-6 py-3 rounded-full text-sm font-semibold shadow-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${darkMode ? 'bg-violet-600 text-white hover:bg-violet-700 focus-visible:outline-violet-500' : 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-500'
+                        className={`sm:px-6 sm:py-3 px-3 py-2 rounded-full text-sm font-semibold shadow-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${darkMode ? 'bg-violet-600 text-white hover:bg-violet-700 focus-visible:outline-violet-500' : 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-500'
                             }`}
                     >
                         LET'S CONNECT
                     </a>
                     <a
                         href="#"
-                        className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${darkMode ? 'bg-gray-800 text-gray-100 hover:bg-gray-700 focus-visible:outline-violet-500' : 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus-visible:outline-blue-500'
+                        className={`sm:px-6 sm:py-3 px-3 py-2 rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${darkMode ? 'bg-gray-800 text-gray-100 hover:bg-gray-700 focus-visible:outline-violet-500' : 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus-visible:outline-blue-500'
                             }`}
                     >
                         VIEW RESUME
                     </a>
                 </div>
 
-                <div className="sm:pt-4 ">
+                <div className="sm:pt-4 hidden sm:block">
                     <button
                         onClick={handleCopyEmail}
                         className={`inline-flex items-center gap-2 text-sm transition-colors duration-200 cursor-pointer ${darkMode ? 'text-gray-400 hover:text-violet-400' : 'text-gray-600 hover:text-blue-600'
