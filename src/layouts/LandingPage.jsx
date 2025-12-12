@@ -6,6 +6,7 @@ import AboutSection from '../features/AboutSection'
 import GithubActivity from '../features/GithubActivity'
 import Footer from '../components/layout/Footer'
 import ContactSection from '../features/ContactSection'
+import SkillMarquee from '../features/SkillMarquee'
 
 
 const LandingPage = () => {
@@ -29,6 +30,9 @@ const LandingPage = () => {
                 </section>
                 <section>
                     <GithubActivity />
+                </section>
+                <section>
+                    <SkillMarquee />
                 </section>
                 <section className=''>
                     <ContactSection></ContactSection>

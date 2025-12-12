@@ -3,6 +3,7 @@ import { useDarkMode } from '../../Contexts/ThemeContext'
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { TextHoverEffect } from '../ui/TextHoverEffectDemo';
 
 const Footer = () => {
   const { darkMode } = useDarkMode()
@@ -13,6 +14,14 @@ const Footer = () => {
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
+  ]
+
+  const techStack = [
+    'Full-stack',
+    'React • Node',
+    'Express',
+    'PostgreSQL',
+    'Firebase'
   ]
 
   const socials = [
@@ -29,9 +38,9 @@ const Footer = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
 
       <div className="relative mx-auto px-6  md:px-10 lg:px-16 py-16 sm:py-20 flex flex-col gap-8">
-       
+
         <div className={`relative overflow-hidden rounded-3xl  px-6 py-8 sm:px-10 sm:py-10 shadow-lg ${darkMode ? 'bg-linear-to-br from-slate-950 via-purple-950 to-slate-950' : 'bg-linear-to-br from-white via-blue-50 to-purple-50'
-          } hover:scale-102 transition-transform duration-700` }>
+          } hover:scale-102 transition-transform duration-700`}>
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.14),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(168,85,247,0.12),transparent_30%)]" />
           {/* Top card */}
           <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between ">
@@ -44,16 +53,22 @@ const Footer = () => {
                 <p className="text-xs uppercase tracking-[0.35em] text-violet-500 dark:text-violet-300">Portfolio</p>
                 <h3 className="text-3xl sm:text-4xl font-semibold bg-linear-to-r from-blue-600 to-violet-500 dark:from-violet-300 dark:to-blue-300 bg-clip-text text-transparent">
                   Shawon Reza
+
                 </h3>
+                
               </div>
               <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl">
                 Building fast, clean, and user-friendly experiences—front to back.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5 ">Full-stack</span>
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5">React • Node</span>
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5">Express</span>
-                <span className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 font-medium transition-all duration-500 shadow-sm hover:-translate-y-0.5">PostgreSQL</span>
+                {techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full bg-slate-200/70 dark:bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 transition-all duration-500 shadow-sm hover:-translate-y-0.5"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
 
