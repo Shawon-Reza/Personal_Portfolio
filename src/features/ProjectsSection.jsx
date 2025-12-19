@@ -102,7 +102,10 @@ export function StickyScrollRevealDemo() {
 
             <div className="relative flex justify-center pb-12 pt-6">
                 <button
-                    onClick={handleViewAll}
+                    onClick={()=>{
+                        handleViewAll();
+                        navigate("/projects/4");
+                    }}
                     className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                     View All Projects
                 </button>

@@ -5,30 +5,56 @@ import { useDarkMode } from "../../Contexts/ThemeContext";
 import { useNavigate } from "react-router-dom";
 
 const scrollbarStyles = `
-  /* Webkit browsers (Chrome, Safari, Edge) */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  .scrollbar-light::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .scrollbar-light::-webkit-scrollbar-thumb {
-    background: #d1d5db;
-    border-radius: 10px;
-  }
-  .scrollbar-light::-webkit-scrollbar-thumb:hover {
-    background: #9ca3af;
-  }
-  .scrollbar-dark::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .scrollbar-dark::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 10px;
-  }
-  .scrollbar-dark::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
-  }
+    /* Base size (keep size as requested) */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    /* Track */
+    .scrollbar-light::-webkit-scrollbar-track,
+    .scrollbar-dark::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Thumb – colorful gradient with rounded pill and glow */
+    .scrollbar-light::-webkit-scrollbar-thumb,
+    .scrollbar-dark::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #3b82f6, #8b5cf6, #ec4899);
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.0);
+    }
+
+    /* Hover/Active states for stronger visibility */
+    .scrollbar-light::-webkit-scrollbar-thumb:hover,
+    .scrollbar-dark::-webkit-scrollbar-thumb:hover {
+        filter: brightness(1.15);
+        box-shadow: 0 0 10px 2px rgba(139, 92, 246, 0.45),
+                                0 0 4px 1px rgba(59, 130, 246, 0.35);
+    }
+
+    .scrollbar-light::-webkit-scrollbar-thumb:active,
+    .scrollbar-dark::-webkit-scrollbar-thumb:active {
+        filter: brightness(1.25);
+    }
+
+    /* Corner (when both scrollbars present) */
+    .scrollbar-light::-webkit-scrollbar-corner,
+    .scrollbar-dark::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+
+    /* Firefox – use thumb/track colors (no gradients supported) */
+    .scrollbar-light {
+        scrollbar-width: thin;
+        scrollbar-color: #8b5cf6 transparent; /* thumb track */
+    }
+    .scrollbar-dark {
+        scrollbar-width: thin;
+        scrollbar-color: #a78bfa transparent; /* thumb track */
+    }
 `;
 
 export const StickyScroll = ({
@@ -54,7 +80,7 @@ export const StickyScroll = ({
             <style>{scrollbarStyles}</style>
             <div
                 ref={containerRef}
-                className={`relative h-[calc(100vh-300px)] w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth ${
+                className={`relative h-[calc(100vh-400px)] w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth ${
                     darkMode ? "scrollbar-dark" : "scrollbar-light"
                 }`}>
             {safeContent.map((item, index) => (

@@ -11,16 +11,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 w-full backdrop-blur transition-colors duration-300 bg-white/80 dark:bg-slate-950/80 border border-gray-200 dark:border-gray-800 shadow-sm z-100  
+      className="fixed top-0 w-full backdrop-blur transition-colors duration-300 bg-transparen shadow-sm z-100  
       
       ">
+      {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" /> */}
 
       <div className="mx-auto flex items-center justify-between px-6 sm:py-4">
         <div className="text-xl font-bold tracking-tight bg-linear-to-r from-blue-600 to-violet-600 dark:from-violet-400 dark:to-blue-400 bg-clip-text text-transparent">
           Reza
         </div>
 
-        <ul className="flex items-center gap-1 bg-gray-100 dark:bg-gray-800/60 px-2 py-2 rounded-lg backdrop-blur-sm">
+        <ul className="flex items-center gap-1 bg-gray-100 dark:bg-gray-800/60 px-2 py-3  backdrop-blur-sm rounded-lg shadow-sm relative hover:scale-102 transition-transform ease-in-out duration-900">
+
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))] rounded-lg" />
+
           {menuItems.map((item) => (
             <li key={item.label}>
               <NavLink

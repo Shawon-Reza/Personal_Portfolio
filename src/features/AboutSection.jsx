@@ -179,7 +179,7 @@ const AboutSection = ({ content = defaultContent }) => {
                 {/* Right side Content */}
                 <div className="flex relative">
 
-                    <div className={`relative mx-auto max-w-md rounded-3xl pt-3 sm:pt-0 sm:p-6 shadow-xl backdrop-blur transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-gray-900/70' : 'border-gray-200 bg-white/80'
+                    <div className={`relative  mx-auto max-w-md rounded-3xl pt-3 sm:pt-5 md:mt-6 lg:pt-7 xl:pt-8 sm:p-6 shadow-xl backdrop-blur transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-gray-900/70' : 'border-gray-200 bg-white/80'
                         }`}>
                         <div className="rounded-3xl pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(124,58,237,0.16),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(37,99,235,0.14),transparent_30%),linear-gradient(120deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06))]" />
                         <ShineBorder

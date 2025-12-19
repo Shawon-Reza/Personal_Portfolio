@@ -23,12 +23,13 @@ const LandingPage = () => {
                 <section>
                     <Navbar />
                 </section>
-                <section className='mt-18'>
+                <section className=''>
                     <HeroSection />
                 </section>
                 <section>
                     <AboutSection />
                 </section>
+                {/* Project section.......... */}
                 <section>
                     <StickyScrollRevealDemo />
                 </section>
